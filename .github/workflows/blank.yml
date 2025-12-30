@@ -1,11 +1,21 @@
 name: hello world
 on: workflow_dispatch
 jobs:
-  hello:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-lastest
     steps:
-      - name: hello step
-        run: |
-          echo "welocome Githubactions"
-          echo "Welcome to Saikiran WOrld"
+      - name: Build step
+        run: echo "A demo build"
+  test:
+    runs-on: ubuntu-lastest
+    steps:
+      - name: Test phase
+        run: echo "running the test echo..............................."
+
+  delopy:
+    runs-on: ubuntu-lastest
+    steps:
+      - name: delopy
+        run: echo "this is delopy"
+      
     
