@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build step
-        run: echo "A demo build,${{var.MY_NAME}}"
+        run: echo "A demo build,${{vars.MY_NAME}}"
  
 
   
