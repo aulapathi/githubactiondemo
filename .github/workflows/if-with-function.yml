@@ -7,19 +7,19 @@ on:
       - devlope
 jobs:
   qulity_checks:
-    if: startsWith(github.ref-name,'dev') && github.event-name == 'push'
+    if: startsWith(github.ref_name,'dev') && github.event_name == 'push'
     runs-on: unbuntu-latest
     steps:
       - name: perform code qulity
         run: echo "performing quality checks on the code"
   dev_deploy:
-    if: guthub.ref_name == 'dev' &&  github.event-name == 'push'
+    if: github.ref_name == 'dev' &&  github.event_name == 'push'
     runs-on: unbuntu-latest
     steps:
       - name: perform code qulity
         run: echo "deploying in the dev env`
   prod_depoly:
-    if: guthub.ref_name == 'main' &&  github.event-name == 'push'
+    if: github.ref_name == 'main' &&  github.event_name == 'push'
     runs-on: unbuntu-latest
     steps:
       - name: perform code qulity
