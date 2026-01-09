@@ -1,0 +1,34 @@
+name: Nice IF example
+on:
+  push:
+    branches:
+      - main
+      - dev
+      - devlope
+jobs:
+  qulity_checks:
+    if: stratsWith(github.ref-name,'dev') && github.event-name == 'push'
+    runs-on: unbuntu-latest
+    steps:
+      - name: perform code qulity
+        run: echo "performing quality checks on the code"
+  dev_deploy:
+    if: guthub.ref_name == 'dev' &&  github.event-name == 'push'
+    runs-on: unbuntu-latest
+    steps:
+      - name: perform code qulity
+        run: echo "deploying in the dev env`
+  prod_depoly:
+    if: guthub.ref_name == 'main' &&  github.event-name == 'push'
+    runs-on: unbuntu-latest
+    steps:
+      - name: perform code qulity
+        run: echo "deploying the pro env"
+  success_notify:
+    needs: ['qulity_checks','dev_deploy', 'prod_depoly']
+    if: always() && !failure()
+    runs-on: unbuntu-latest
+    steps:
+      - name: succes
+        run: echo "''''''''''''''''''''''''''''''"
+  
