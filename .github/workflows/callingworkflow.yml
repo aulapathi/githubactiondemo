@@ -4,3 +4,5 @@ on:
 jobs:
   call-greeting:
     uses: ./.github/workflows/resusable.yml
+    with:
+      name: "saikiran"
