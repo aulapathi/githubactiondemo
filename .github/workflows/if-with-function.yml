@@ -7,7 +7,7 @@ on:
       - devlope
 jobs:
   qulity_checks:
-    if: stratsWith(github.ref-name,'dev') && github.event-name == 'push'
+    if: startsWith(github.ref-name,'dev') && github.event-name == 'push'
     runs-on: unbuntu-latest
     steps:
       - name: perform code qulity
