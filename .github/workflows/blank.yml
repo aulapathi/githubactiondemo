@@ -1,23 +1,18 @@
-name: hello world
-on: workflow_dispatch
+name: Github action
+on: 
+  push:
+    branches:
+      - dev
 jobs:
-  build:
+  action-demo:
     runs-on: ubuntu-latest
     steps:
       - name: Build step
-        run: echo "A demo build"
-  test:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Test phase
-        run: echo "running the test echo..............................."
+        uses: actions/checkout@v6
+      - name: print the index.html
+        run: cat index.html
+ 
 
-  delopy:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: delopy
-        run: echo "this is delopy"
+  
       
     
